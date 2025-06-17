@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Phishing Detector</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/png" href="/static/web.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Web Phishing Detection</h1>
+        <p class="subtitle">Secure Your Digital World with AI-Powered Protection</p>
+        <nav>
+            <ul type="none">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Get in Touch</h2>
+            <!-- <p>If you have any questions or feedback regarding the Phishing Detector, feel free to 
+                reach out to us.</p> -->
+
+            <!-- Success or Error Message -->
+            {% if success %}
+                <p class="success-message">Your message has been submitted successfully!</p>
+            {% elif error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+
+            <!-- Contact Form -->
+            <form action="{{ url_for('contact') }}" method="POST">
+                <div class="input-group">
+                    
+                    <label for="name" class="form__label">Name:</label>
+                    <input type="text" class="form__input" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email" class="form__label">Email:</label>
+                    <input type="email" class="form__input" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="message" class="form__label">Message:</label>
+                    <textarea class="form__input" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 PHISHING DETECTOR | AASHIK EDWIN P | 23PCN01 | FINAL YEAR PROJECT. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'924e36be98d2bcf8',t:'MTc0MjczNTg5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
